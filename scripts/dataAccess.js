@@ -11,6 +11,10 @@ export const getFacilities = () => {
     return database.facilities.map(f => ({...f}))
 }
 
+export const getMineralFacilites = () => {
+    return database.mineralFacilities.map(mF => ({...mF}))
+}
+
 export const purchaseMineral = () => {
 
         // Broadcast custom event to entire documement so that the
