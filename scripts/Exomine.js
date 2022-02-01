@@ -8,7 +8,7 @@ import { Cart } from "./cart.js"
 */
 
 document.addEventListener("click", (event) => {
-    if (event.targget.id === "purchase") {
+    if (event.target.id === "purchase") {
         const purchase = addPurchase()
     }
 })
