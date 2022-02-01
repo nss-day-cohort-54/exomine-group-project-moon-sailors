@@ -2,7 +2,7 @@ import { getGovernors, setGovernor, transientState } from "./dataAccess.js";
 
 //import getGovernors and store in a new variable 
 const governorsArray = getGovernors()
-const transientState = transientState()
+
 
 
 
