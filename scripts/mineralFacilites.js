@@ -3,6 +3,7 @@ import { getMineralFacilites } from "./dataAccess.js"
 
 const mineralFacilitiesArray = getMineralFacilites()
 
+
 const facilityMatch = (facilityObject) => {
     if (facilityObject.id === facilityId) {
         return true
@@ -17,3 +18,5 @@ export const facilityMineralContent = () => {
 
     return filteredFacilityMinerals
 }
+
+
