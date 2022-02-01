@@ -13,6 +13,11 @@ export const setGovernor = (governorId) => {
     document.dispatchEvent( new CustomEvent("governorSelected") )
 }
 
+export const transientState = () => {
+    return database.transientState
+}
+
+
 
 export const getFacilities = () => {
     return database.facilities.map(f => ({...f}))
