@@ -1,5 +1,5 @@
+import { purchaseMineral } from "./dataAccess.js"
 /*
-import { addPurchase } from "./dataAccess.js"
 import { Governor } from "./governors.js"
 import { Facility } from "./facilites.js"
 import { FacilityMinerals } from "./mineralFacilites.js"
@@ -11,7 +11,7 @@ import { Governors } from "./governors.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-        const purchase = addPurchase()
+        const purchase = purchaseMineral()
     }
 })
 
@@ -35,7 +35,7 @@ export const Exomine = () => {
         <section class="choices_minerals options">
             
         </section>
-        <section class="cart>
+        <section class="cart">
             <h2>Space Cart<h2>
             
             <button id='purchase'>Purchase Mineral</button>

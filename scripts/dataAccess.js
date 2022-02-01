@@ -20,7 +20,11 @@ export const getGovernors = () => {
     return database.governors.map(governor => ({...governor}))
 }
 export const purchaseMineral = () => {
-
+        const newPurchase = {...database.transientState}
+        const lastIndex = database.colonyMinerals.length
+        newPurchase.id = lastIndex + 1
+        database.colonyMinerals.push(newPurchase)
+        database.transientState = {}
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
