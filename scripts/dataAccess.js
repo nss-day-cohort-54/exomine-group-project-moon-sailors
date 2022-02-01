@@ -7,14 +7,23 @@ export const setFacility = (facilityId) => {
     document.dispatchEvent( new CustomEvent("stateChanged") )
 }
 
+export const setGovernor = (governorId) => {
+    database.transientState.selectedGovernor = governorId
+    
+}
+
 export const getFacilities = () => {
     return database.facilities.map(f => ({...f}))
 }
 
-export const getMineralFacilites = () => {
+export const getMineralFacilities = () => {
     return database.mineralFacilities.map(mF => ({...mF}))
 }
 
+//this function is responsibile for returning a copy of the governors array from the database 
+export const getGovernors = () => {
+    return database.governors.map(governor => ({...governor}))
+}
 export const purchaseMineral = () => {
 
         // Broadcast custom event to entire documement so that the
