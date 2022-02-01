@@ -7,6 +7,8 @@ import { Sales } from "./sales.js"
 import { Cart } from "./cart.js"
 */
 
+import { Governors } from "./governors.js"
+
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
         const purchase = purchaseMineral()
@@ -19,9 +21,9 @@ export const Exomine = () => {
         <h1 class='title'>Solar System Mining Marketplace</h1>
     </header>
     <article class="choices">
-        <section class="choices_governor options">
-            <h2>Choose a governor<h2>
-            
+        <section class="governor">
+            <p>Choose a Governor<p>
+            ${Governors()}
         </section>
         <section class='choices_facility options'>
             <h2>Choose a facility<h2>
