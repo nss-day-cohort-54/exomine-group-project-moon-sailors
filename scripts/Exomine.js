@@ -1,5 +1,5 @@
+import { purchaseMineral } from "./dataAccess.js"
 /*
-import { addPurchase } from "./dataAccess.js"
 import { Governor } from "./governors.js"
 import { Facility } from "./facilites.js"
 import { FacilityMinerals } from "./mineralFacilites.js"
@@ -9,7 +9,7 @@ import { Cart } from "./cart.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-        const purchase = addPurchase()
+        const purchase = purchaseMineral()
     }
 })
 
