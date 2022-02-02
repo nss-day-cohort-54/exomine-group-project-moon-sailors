@@ -3,7 +3,7 @@ import { setFacility, getFacilities } from "./dataAccess.js"
 //import setFacility and store in a new variable 
 
 const facilityArray = getFacilities()
-
+// add transientState
 
 
 
@@ -12,7 +12,7 @@ export const Facilities = () => {
 
     let html = "<h2></h2>"
 
-
+    // put this in an if() on line 20
         html += '<select id="facility" disabled name="facility" >'
         html += '<option value= "0">Select a Facility</option>'
     

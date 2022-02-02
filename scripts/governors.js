@@ -2,7 +2,7 @@ import { getGovernors, setGovernor, transientState } from "./dataAccess.js";
 
 //import getGovernors and store in a new variable 
 const governorsArray = getGovernors()
-
+const state = transientState()
 
 
 
@@ -16,7 +16,7 @@ export const Governors = () => {
     
         //to get the governor options we neeed to map through the aray of governors to find the active ones 
         const arrayOfOptions = governorsArray.map((governor) => {
-            if (governor.activeStatus === true && transientState.governorId === governor.id) {
+            if (governor.activeStatus === true && state.selectedGovernor === governor.id) {
                 return `<option selected class="select" value= "${governor.id}"> ${governor.name}</option>`
             } else if (governor.activeStatus === true) {
                 return `<option class="select" value= "${governor.id}"> ${governor.name}</option>`

@@ -9,7 +9,7 @@ export const setFacility = (facilityId) => {
 
 export const setGovernor = (governorId) => {
     database.transientState.selectedGovernor = governorId
-//    document.dispatchEvent( new CustomEvent("stateChanged") )
+    document.dispatchEvent( new CustomEvent("stateChanged") )
     document.dispatchEvent( new CustomEvent("governorSelected") )
 }
 
@@ -37,7 +37,7 @@ export const purchaseMineral = () => {
         const lastIndex = database.colonyMinerals.length
         newPurchase.id = lastIndex + 1
         database.colonyMinerals.push(newPurchase)
-        database.transientState = {}
+        
         // Broadcast custom event to entire documement so that the
         // application can re-render and update state
         document.dispatchEvent( new CustomEvent("stateChanged") )
