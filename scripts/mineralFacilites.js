@@ -8,22 +8,33 @@ const facilities = getFacilities()
 
 
 
-let html = `<h2>
-Facility Minerals
-</h2>`
+
 
 
 export const FacilityHeader = () => {
    
-
-        document.addEventListener("facilitySelected", event => { 
+        let html = ""
+ 
             
-            document.querySelector
+            if (state.selectedFacility === undefined) {
+                html = `<h2>
+                Facility Minerals
+                </h2>`
+            } else {
+                for (const facility of facilities) {
+                    if (facility.id === state.selectedFacility) {
+                        html = `<h2>
+                        Facility Minerals for ${facility.name}
+                        </h2>`
+                    }
+                    
+                }
+                
+                
+            }
             
-            html = `<h2>
-            Facility Minerals for ${facilities.name}
-            </h2>`
-        })
+            
+        
 
         return html
          
