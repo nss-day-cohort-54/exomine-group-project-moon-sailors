@@ -1,6 +1,8 @@
 import { database } from "./database.js"
 
-
+export const getMinerals = ()  => {
+    return database.minerals.map(mineral => ({...mineral}))
+}
 
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
