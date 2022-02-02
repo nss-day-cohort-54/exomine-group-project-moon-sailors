@@ -9,7 +9,8 @@ import { Cart } from "./cart.js"
 
 import { Governors } from "./governors.js"
 import { Facilities } from "./facilites.js"
-import { FacilityHeader } from "./mineralFacilites.js"
+import { FacilityHeader, facilityStock } from "./mineralFacilites.js"
+
 
 
 document.addEventListener("click", (event) => {
@@ -37,6 +38,7 @@ export const Exomine = () => {
         </section>
         <section class="choices_minerals options">
         ${FacilityHeader()}
+        ${facilityStock()}
             
         </section>
         <section class="cart">
