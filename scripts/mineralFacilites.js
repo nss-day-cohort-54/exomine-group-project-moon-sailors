@@ -1,11 +1,43 @@
-import { getMineralFacilites } from "./dataAccess.js"
+import { getMineralFacilities, getFacilities, transientState } from "./dataAccess.js"
 
 
-const mineralFacilitiesArray = getMineralFacilites()
+const mineralFacilitiesArray = getMineralFacilities()
+const state = transientState()
+const facilities = getFacilities()
 
+
+
+
+let html = `<h2>
+Facility Minerals
+</h2>`
+
+
+export const FacilityHeader = () => {
+   
+
+        document.addEventListener("facilitySelected", event => { 
+            
+            document.querySelector
+            
+            html = `<h2>
+            Facility Minerals for ${facilities.name}
+            </h2>`
+        })
+
+        return html
+         
+    
+}
+
+
+
+//document.addEventListener("facilitySelected", customEvent => {
+
+/*
 
 const facilityMatch = (facilityObject) => {
-    if (facilityObject.id === facilityId) {
+    if (facilityObject.id === mineralFacilitiesArray.facilityId) {
         return true
     }
     return false
@@ -19,4 +51,46 @@ export const facilityMineralContent = () => {
     return filteredFacilityMinerals
 }
 
+
+
+
+//This creates the header for the Facility Mineral container
+
+
+
+
+
+
+const currentFacilityMinerals = () => {
+    const filteredFacility = facilityMineralContent()
+
+    for (const facility of facilities) {
+        if (facility.id === state.selectedFacility === filteredFacility.facilityId) {
+            return contentTarget.innerHTML =
+            `
+        <h2> 
+        Facility Minerals for ${facility.name}
+        </h2>`
+        }
+
+    }
+
+}
+
+
+
+
+export const FacilityHeader = () => {
+    document.addEventListener("facilitySelected", customEvent => {
+       return contentTarget.innerHTML =
+        `
+    <h2> 
+    Facility Minerals
+    </h2>`  
+    })
+    currentFacilityMinerals()
+
+}
+
+*/
 

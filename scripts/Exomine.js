@@ -9,6 +9,8 @@ import { Cart } from "./cart.js"
 
 import { Governors } from "./governors.js"
 import { Facilities } from "./facilites.js"
+import { FacilityHeader } from "./mineralFacilites.js"
+
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
@@ -23,17 +25,18 @@ export const Exomine = () => {
     </header>
     <article class="choices">
         <section class="governor">
-            <p>Choose a Governor<p>
+            <h2>Choose a Governor</h2>
             ${Governors()}
         </section>
         <section class='choices_facility options'>
-            <h2>Choose a facility<h2>
+            <h2>Choose a facility</h2>
            ${Facilities()}
         </section>
         <section class="colonyOrders>
             
         </section>
         <section class="choices_minerals options">
+        ${FacilityHeader()}
             
         </section>
         <section class="cart">
