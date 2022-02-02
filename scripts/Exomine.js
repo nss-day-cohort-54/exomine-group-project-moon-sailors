@@ -8,6 +8,7 @@ import { Cart } from "./cart.js"
 */
 
 import { Governors } from "./governors.js"
+import { Facilities } from "./facilites.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
@@ -27,7 +28,7 @@ export const Exomine = () => {
         </section>
         <section class='choices_facility options'>
             <h2>Choose a facility<h2>
-           
+           ${Facilities()}
         </section>
         <section class="colonyOrders>
             
