@@ -5,6 +5,7 @@ import { database } from "./database.js"
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
+    document.dispatchEvent( new CustomEvent("facilitySelected") )
 }
 
 export const setGovernor = (governorId) => {
