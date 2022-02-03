@@ -1,10 +1,13 @@
 import { database } from "./database.js"
 
-
+export const getMinerals = ()  => {
+    return database.minerals.map(mineral => ({...mineral}))
+}
 
 export const setFacility = (facilityId) => {
     database.transientState.selectedFacility = facilityId
     document.dispatchEvent( new CustomEvent("stateChanged") )
+    document.dispatchEvent( new CustomEvent("facilitySelected") )
 }
 
 
@@ -30,9 +33,7 @@ export const getFacilities = () => {
 export const getMineralFacilities = () => {
     return database.mineralFacilities.map(mF => ({...mF}))
 }
-export const getMinerals = () => {
-    return database.minerals.map(m => ({...m}))
-}
+
 
 
 //this function is responsibile for returning a copy of the governors array from the database 

@@ -1,11 +1,75 @@
-import { getMineralFacilites } from "./dataAccess.js"
+import { getMineralFacilities, getFacilities, transientState, getMinerals } from "./dataAccess.js"
 
 
-const mineralFacilitiesArray = getMineralFacilites()
+const mineralFacilitiesArray = getMineralFacilities()
+const state = transientState()
+const facilities = getFacilities()
+const minerals = getMinerals()
+
+
+
+
+
+
+
+export const FacilityHeader = () => {
+
+    let html = ""
+
+
+    if (state.selectedFacility === undefined) {
+        html = `<h2>
+                Facility Minerals
+                </h2>`
+    } else {
+        for (const facility of facilities) {
+            if (facility.id === state.selectedFacility) {
+                html = `<h2>
+                        Facility Minerals for ${facility.name}
+                        </h2>`
+            }
+
+        }
+
+
+    }
+
+
+
+
+    return html
+
+
+}
+
+//make function that displays current amount of minerals for selected facility
+export const facilityStock = () => {
+    let html = `<ul>`
+    const mineralContents = facilityMineralContent()
+    for (const mineral of minerals) {
+        for (const mineralContent of mineralContents) {
+            if (mineralContent.mineralId === mineral.id) {
+                html += `<li><input type="radio" name="mineral" value="${mineral.id}"/> ${mineralContent.mineralAmount} tons of ${mineral.name}
+                        </li>`
+            }
+        }
+    } html += `</ul>`
+    return html
+
+
+}
+
+
+//radio selection of minerals at selected facilty
+
+
+
+//document.addEventListener("facilitySelected", customEvent => {
+
 
 
 const facilityMatch = (facilityObject) => {
-    if (facilityObject.id === facilityId) {
+    if (state.selectedFacility === facilityObject.facilityId) {
         return true
     }
     return false
@@ -18,5 +82,17 @@ export const facilityMineralContent = () => {
 
     return filteredFacilityMinerals
 }
+
+
+
+
+//This creates the header for the Facility Mineral container
+
+
+
+
+
+
+
 
 

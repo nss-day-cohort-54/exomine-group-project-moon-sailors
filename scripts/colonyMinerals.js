@@ -33,30 +33,24 @@ export const colonyMinerals = () => {
 
 
 export const governorStock = () => {
-
-    let html = "<ul>"
-
-    const colonyContents = colonyMineralContent()
+let html="<ul>"
     for (const mineral of minerals) {
-        for (const colonyContent of colonyContents) {
-            for (const colonyMineral of cMinerals) {
-                if (colonyContent.id === colonyMineral.colonyId) {
-                    html += `<li
-                 name="mineralCount" value="${mineral.id}" /> ${colonyMineral.amount} tons of ${mineral.name}
-                     </li>`
-
+        for (const colony of colonies) {
+            for (const governor of governors) {
+                for (const cMineral of cMinerals) {
+                    if ( transient.selectedGovernor === governor.id &&
+                        governor.colonyId === colony.id &&
+                        colony.id === cMineral.colonyId &&
+                        cMineral.mineralId === mineral.id) {
+                            html += `<li value="${mineral.id}">${cMineral.amount} tons of ${mineral.name}</li>`
+                        }
+                    }
                 }
-            }
-
         }
-
     }
-
-    html += "</ul>"
+    html+= "</ul>"
     return html
-
 }
-
 // export const colMineralCount = () => {
 //     let html = ""
 //     html += "<ul>"
@@ -87,22 +81,3 @@ export const governorStock = () => {
 //     return html
 // }
 
-
-const colonyMatch = (colonyObj) => {
-    for (const governor of governors) {
-        if (transient.selectedGovernor === governor.id) {
-            for (const colony of colonies) {
-                if (governor.colonyId === colony.id) {
-                    return true
-                }
-                return false
-            }
-        }
-    }
-
-}
-//if the gov selected has a colony id that matches and colony match up filter so we only get the 
-const colonyMineralContent = () => {
-    const filteredColonyMinerals = colonies.filter(colonyMatch)
-    return filteredColonyMinerals
-}
