@@ -1,4 +1,4 @@
-import { getMineralFacilities, getFacilities, transientState, getMinerals } from "./dataAccess.js"
+import { getMineralFacilities, getFacilities, transientState, getMinerals, setMineralFacility, setMineral } from "./dataAccess.js"
 
 
 const mineralFacilitiesArray = getMineralFacilities()
@@ -48,8 +48,11 @@ export const facilityStock = () => {
     const mineralContents = facilityMineralContent()
     for (const mineral of minerals) {
         for (const mineralContent of mineralContents) {
-            if (mineralContent.mineralId === mineral.id) {
-                html += `<li><input type="radio" name="mineral" value="${mineral.id}"/> ${mineralContent.mineralAmount} tons of ${mineral.name}
+            if (mineralContent.mineralId === mineral.id && state.selectedMineral === mineralContent.mineralId) {
+                html += `<li><input type="radio" id="mineral--${mineral.id}" checked name="mineral" value="${mineral.id}"/> ${mineralContent.mineralAmount} tons of ${mineral.name}
+                        </li>`
+            } else if (mineralContent.mineralId === mineral.id) {
+                html += `<li><input type="radio" id="mineral--${mineral.id}" name="mineral" value="${mineral.id}"/> ${mineralContent.mineralAmount} tons of ${mineral.name}
                         </li>`
             }
         }
@@ -89,8 +92,14 @@ export const facilityMineralContent = () => {
 //This creates the header for the Facility Mineral container
 
 
-
-
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "facility") {
+            setMineralFacility(parseInt(event.target.value))
+        }
+    }
+)
 
 
 

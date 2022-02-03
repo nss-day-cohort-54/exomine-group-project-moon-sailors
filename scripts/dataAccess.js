@@ -17,10 +17,20 @@ export const setGovernor = (governorId) => {
     document.dispatchEvent( new CustomEvent("governorSelected") )
 }
 
+export const setMineralFacility = (mineralFacilityId) => {
+    database.transientState.selectedMineralFacility = mineralFacilityId
+    document.dispatchEvent (new CustomEvent("stateChanged"))
+    document.dispatchEvent (new CustomEvent("mineralFacilitySelected"))
+}
+
+export const setMineral = (mineralId) => {
+    database.transientState.selectedMineral = mineralId
+    document.dispatchEvent (new CustomEvent("stateChanged"))
+    document.dispatchEvent (new CustomEvent("mineralSelected"))
+}
 export const transientState = () => {
     return database.transientState
 }
-
 
 
 

@@ -11,6 +11,7 @@ import { Governors } from "./governors.js"
 import { Facilities } from "./facilites.js"
 import {  colonyMinerals, governorStock } from "./colonyMinerals.js"
 import { FacilityHeader, facilityStock } from "./mineralFacilites.js"
+import {addToCart} from "./spaceCart.js"
 
 
 
@@ -43,9 +44,10 @@ export const Exomine = () => {
         ${facilityStock()}
             
         </section>
-        <section class="cart">
+        <section class="cartBox">
             <h2>Space Cart<h2>
-            
+            ${addToCart()}
+            <div class="cart"></div>
             <button id='purchase'>Purchase Mineral</button>
         </section>
     </article>
