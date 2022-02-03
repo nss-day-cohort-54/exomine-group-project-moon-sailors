@@ -33,7 +33,12 @@ export const database = {
         { id: 7, facilityId: 4, mineralId: 1, mineralAmount: 2 },
         { id: 8, facilityId: 4, mineralId: 3, mineralAmount: 55 }
     ],
-    colonyMinerals: [],
+    colonyMinerals: [
+        { id: 1, amount: 0, colonyId: 3, mineralId: 1 },
+        { id: 2, amount: 10, colonyId: 2, mineralId: 3 },
+        { id: 3, amount: 0, colonyId: 1, mineralId: 2}
+    ],
     transientState: {}
 }
+
 
