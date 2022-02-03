@@ -28,11 +28,14 @@ export const setMineral = (mineralId) => {
     document.dispatchEvent (new CustomEvent("stateChanged"))
     document.dispatchEvent (new CustomEvent("mineralSelected"))
 }
+export const setMineralAmount = () => {
+    database.transientState.mineralAmount = mineralAmountId
+    document.dispatchEvent (new CustomEvent("stateChanged"))
+    document.dispatchEvent (new CustomEvent("mineralSelected"))
+}
 export const transientState = () => {
     return database.transientState
 }
-
-
 
 
 

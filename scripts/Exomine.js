@@ -49,6 +49,7 @@ export const Exomine = () => {
             ${addToCart()}
             <div class="cart"></div>
             <button id='purchase'>Purchase Mineral</button>
+            
         </section>
     </article>
     `
