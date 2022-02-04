@@ -16,17 +16,15 @@ export const addToCart = () => {
     } else {
 
         for (const facility of facilities) {
-            for (const mineralFacility of mineralFacilities) {
                 for (const mineral of minerals) {
                     if (state.selectedMineral === mineral.id &&
-                        state.selectedMineralFacility === mineralFacility.id &&
-                        facility.activeStatus === true &&
-                        mineralFacility.facilityId === facility.id
+                        state.selectedFacility=== facility.id &&
+                        facility.activeStatus === true 
                         ) {
                         html += `1 ton of ${mineral.name} from ${facility.name} </div>`
                     }
                 }
-            }
+            
         }
     } return html
 

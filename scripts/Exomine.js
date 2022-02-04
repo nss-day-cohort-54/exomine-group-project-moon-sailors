@@ -17,7 +17,7 @@ import {addToCart} from "./spaceCart.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-        const purchase = purchaseMineral()
+       const purchase=  purchaseMineral()
     }
 })
 
@@ -49,6 +49,7 @@ export const Exomine = () => {
             ${addToCart()}
             <div class="cart"></div>
             <button id='purchase'>Purchase Mineral</button>
+            
         </section>
     </article>
     `
