@@ -34,9 +34,15 @@ export const database = {
         { id: 8, facilityId: 4, mineralId: 3, mineralAmount: 55 }
     ],
     colonyMinerals: [
-        // { id: 1, amount: 0, colonyId: 3, mineralId: 1 },
-        // { id: 2, amount: 10, colonyId: 2, mineralId: 3 },
-        // { id: 3, amount: 0, colonyId: 1, mineralId: 2}
+        { id: 1, amount: 0, colonyId: 1, mineralId: 1 },
+        { id: 2, amount: 0, colonyId: 1, mineralId: 3 },
+        { id: 3, amount: 0, colonyId: 1, mineralId: 2},
+        { id: 4, amount: 0, colonyId: 2, mineralId: 1 },
+        { id: 5, amount: 0, colonyId: 2, mineralId: 3 },
+        { id: 6, amount: 0, colonyId: 2, mineralId: 2},
+        { id: 7, amount: 0, colonyId: 3, mineralId: 1 },
+        { id: 8, amount: 0, colonyId: 3, mineralId: 3 },
+        { id: 9, amount: 0, colonyId: 3, mineralId: 2}
     ],
     transientState: {}
 }

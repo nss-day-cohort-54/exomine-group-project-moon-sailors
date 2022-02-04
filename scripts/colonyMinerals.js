@@ -8,11 +8,10 @@ const governors = getGovernors()
 const minerals = getMinerals()
 
 // this function is responsible for rendering the stock of minerals per colony based on the gov selected. 
-const transient = transientState()
-const cMinerals = getColonyMinerals()
 
 
 export const colonyMinerals = () => {
+    const transient = transientState()
 
 
     let htmlHeader = "<h2>Colony Minerals</h2>"
@@ -33,22 +32,27 @@ export const colonyMinerals = () => {
 
 
 export const governorStock = () => {
-let html="<ul>"
+    const transient = transientState()
+    const cMinerals = getColonyMinerals()
+
+    let html = "<ul>"
     for (const mineral of minerals) {
         for (const colony of colonies) {
             for (const governor of governors) {
                 for (const cMineral of cMinerals) {
-                    if ( transient.selectedGovernor === governor.id &&
+                    if (transient.selectedGovernor === governor.id &&
                         governor.colonyId === colony.id &&
                         colony.id === cMineral.colonyId &&
-                        cMineral.mineralId === mineral.id) {
-                            html += `<li value="${mineral.id}">${cMineral.amount} tons of ${mineral.name}</li>`
-                        }
+                        cMineral.mineralId === mineral.id
+                        && cMineral.amount > 0
+                    ) {
+                        html += `<li value="${mineral.id}">${cMineral.amount} tons of ${mineral.name}</li>`
                     }
                 }
+            }
         }
     }
-    html+= "</ul>"
+    html += "</ul>"
     return html
 }
 // export const colMineralCount = () => {

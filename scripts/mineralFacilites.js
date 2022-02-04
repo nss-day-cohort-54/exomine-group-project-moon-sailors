@@ -1,10 +1,6 @@
 import { getMineralFacilities, getFacilities, transientState, getMinerals, setMineralFacility, setMineral } from "./dataAccess.js"
 
 
-const mineralFacilitiesArray = getMineralFacilities()
-const state = transientState()
-const facilities = getFacilities()
-const minerals = getMinerals()
 
 
 
@@ -13,7 +9,9 @@ const minerals = getMinerals()
 
 
 export const FacilityHeader = () => {
-
+    const state = transientState()
+    const facilities = getFacilities()
+    
     let html = ""
 
 
@@ -44,6 +42,11 @@ export const FacilityHeader = () => {
 
 //make function that displays current amount of minerals for selected facility
 export const facilityStock = () => {
+    const state = transientState()
+const minerals=getMinerals()
+const facilities = getFacilities()
+const mineralFacilitiesArray = getMineralFacilities()
+
     let html = `<ul>`
     const mineralContents = facilityMineralContent()
     for (const mineral of minerals) {
@@ -72,6 +75,8 @@ export const facilityStock = () => {
 
 
 const facilityMatch = (facilityObject) => {
+    const state = transientState()
+
     if (state.selectedFacility === facilityObject.facilityId) {
         return true
     }
@@ -81,6 +86,8 @@ const facilityMatch = (facilityObject) => {
 //Filter the array of facility minerals on the facilityId foreign key as the first step. 
 //It should match the id of the facility chosen by the user.
 export const facilityMineralContent = () => {
+    const mineralFacilitiesArray = getMineralFacilities()
+
     const filteredFacilityMinerals = mineralFacilitiesArray.filter(facilityMatch)
 
     return filteredFacilityMinerals

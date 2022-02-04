@@ -17,7 +17,7 @@ import {addToCart} from "./spaceCart.js"
 
 document.addEventListener("click", (event) => {
     if (event.target.id === "purchase") {
-        const purchase = purchaseMineral()
+       const purchase=  purchaseMineral()
     }
 })
 
