@@ -9,10 +9,10 @@ const mineralFacilities = getMineralFacilities()
 const minerals = getMinerals()
 
 export const addToCart = () => {
-    let html = `<div class="cartItem">`
+    let html = `<h3 class="cartItem">`
 
     if (state.selectedMineral === undefined) {
-        html += '</div>'
+        html += '</h3>'
     } else {
 
         for (const facility of facilities) {

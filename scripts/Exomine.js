@@ -26,19 +26,25 @@ export const Exomine = () => {
     <header class="header">
         <h1 class='title'>Solar System Mining Marketplace</h1>
     </header>
-    <article class="choices">
+    <article class="govFacility">
         <section class="governor">
-            <h2>Choose a Governor</h2>
+            <h3>Choose a Governor</h3>
             ${Governors()}
-        </section>
-        <section class='choices_facility options'>
-            <h2>Choose a facility</h2>
-           ${Facilities()}
         </section>
         <section class="colonyOrders">
             ${colonyMinerals()}
             ${governorStock()}
         </section>
+    </article>
+
+    <article class="colony">
+        <section class='choices_facility options'>
+        <h3>Choose a facility</h3>
+       ${Facilities()}
+    </section>
+    </article>
+
+    <article class="minCart">
         <section class="choices_minerals options">
         ${FacilityHeader()}
         ${facilityStock()}

@@ -1,0 +1,15 @@
+.govFacility {
+    display: flex;
+}
+
+.governor {
+    flex-basis: 50%;
+}
+
+.minCart {
+    display: flex;
+}
+
+.choices_minerals {
+    flex-basis: 50%;
+}
